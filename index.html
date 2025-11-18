@@ -228,40 +228,12 @@ header h1 {
   border-radius: 8px;
 }
 
-/* --- Mobile drawer styles (replace previous mobile .sidebar rules) --- */
+/* Allow scrolling for the CV section on mobile */
 @media (max-width: 768px) {
-  .container { flex-direction: column; }
-
-  /* Drawer */
-  .sidebar {
-    position: fixed;                   /* fixed to viewport */
-    top: var(--header-height, 60px);   /* set via JS (fallback 60px) */
-    left: 0;
-    width: 260px;
-    height: calc(100% - var(--header-height, 60px));
-    transform: translateX(-110%);      /* hidden off-canvas */
-    transition: transform 0.28s ease;
-    z-index: 1000;                     /* must be > header's z-index */
-    padding-top: 18px;                 /* small padding for content */
-    border-radius: 0;                  /* flush to page edges on mobile */
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    background: var(--sidebar-bg, #fff);
-    -webkit-overflow-scrolling: touch;
+  #cv {
+    max-height: 80vh;      /* Or 100vh if you prefer */
     overflow-y: auto;
-  }
-
-  /* Visible state */
-  .sidebar.open {
-    transform: translateX(0);
-  }
-
-  /* Show hamburger */
-  .hamburger { display: flex; }
-
-  /* When menu open, prevent body scroll */
-  body.menu-open {
-    overflow: hidden;
-    touch-action: none;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
   }
 }
 
@@ -774,83 +746,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach(section => observer.observe(section));
 });
-
-/* MOBILE SIDEBAR: compute header height, set CSS var, handle toggle and resize */
-(function () {
-  const sidebar = document.getElementById('sidebar');
-  const hamburger = document.getElementById('hamburger');
-  const header = document.querySelector('header');
-
-  if (!sidebar || !hamburger || !header) return;
-
-  // Ensure header has a z-index lower than the sidebar (header currently z-index:20)
-  // Sidebar CSS set z-index:1000 so it will be above the header when visible.
-
-  // Update CSS variable and inline top/height to match header height
-  function updateSidebarDimensions() {
-    const headerHeight = header.offsetHeight || 60; // px
-    // set CSS custom property for use in CSS
-    document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
-
-    // Also set inline styles to be extra-safe
-    sidebar.style.top = headerHeight + 'px';
-    sidebar.style.height = `calc(100% - ${headerHeight}px)`;
-  }
-
-  // initial setup
-  updateSidebarDimensions();
-
-  // update on resize and orientation change
-  window.addEventListener('resize', updateSidebarDimensions);
-  window.addEventListener('orientationchange', updateSidebarDimensions);
-
-  // Toggle menu open/close
-  function openMenu() {
-    sidebar.classList.add('open');
-    document.body.classList.add('menu-open');
-    hamburger.setAttribute('aria-expanded', 'true');
-  }
-  function closeMenu() {
-    sidebar.classList.remove('open');
-    document.body.classList.remove('menu-open');
-    hamburger.setAttribute('aria-expanded', 'false');
-  }
-  function toggleMenu() {
-    if (sidebar.classList.contains('open')) closeMenu();
-    else openMenu();
-  }
-
-  // Set initial aria state
-  hamburger.setAttribute('role', 'button');
-  hamburger.setAttribute('aria-controls', 'sidebar');
-  hamburger.setAttribute('aria-expanded', 'false');
-
-  // click to toggle
-  hamburger.addEventListener('click', (e) => {
-    e.preventDefault();
-    toggleMenu();
-  });
-
-  // Close menu when clicking outside the sidebar (optional — nicer UX)
-  document.addEventListener('click', (e) => {
-    if (!sidebar.classList.contains('open')) return;
-    const isClickInside = sidebar.contains(e.target) || hamburger.contains(e.target);
-    if (!isClickInside) closeMenu();
-  });
-
-  // Close on ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && sidebar.classList.contains('open')) closeMenu();
-  });
-
-  // When a nav link is clicked on mobile, close the menu (so user sees content)
-  sidebar.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      // small delay to allow smooth scroll to start, then close menu
-      setTimeout(closeMenu, 200);
-    });
-  });
-})();
 </script>
 
 </body>
