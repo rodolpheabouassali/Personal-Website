@@ -228,15 +228,12 @@ header h1 {
   border-radius: 8px;
 }
 
-/* Allow scrolling for the CV section on mobile */
+/* Adjust PDF height for mobile devices */
 @media (max-width: 768px) {
-  #cv {
-    max-height: 80vh;      /* Or 100vh if you prefer */
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  .cv-pdf {
+    height: 60vh;     /* 60% of viewport height on small screens */
   }
 }
-
 
   #home a { color: #008080; text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
   #home a:hover { color: #004d4d; text-decoration: underline; }
