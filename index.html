@@ -330,9 +330,14 @@ header h1 {
   }
 
   /* Make iframe fit nicely */
-  iframe.cv-pdf {
-    height: 60vh;
+@media (max-width: 768px) {
+
+  /* Hide embedded CV on mobile */
+  .cv-pdf {
+    display: none;
   }
+
+}
 
 }
   .overlay {
