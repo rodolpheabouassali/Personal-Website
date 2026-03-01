@@ -870,5 +870,33 @@ document.addEventListener("DOMContentLoaded", () => {
   overlay.classList.remove('active');
 }
 </script>
+  <script>
+// Fonction pour mettre à jour le texte du CV selon la langue et la taille d'écran
+function updateCVTextForMobile() {
+  const cvSection = document.getElementById('cv');
+  const cvParagraph = cvSection.querySelector('p'); // le paragraphe principal
+  const lang = document.querySelector('h1').getAttribute('data-en') ? 'en' : 'fr';
+
+  if (window.innerWidth <= 768) { // si écran mobile
+    if (lang === 'en') {
+      cvParagraph.innerHTML = "Below is my CV. Click to download.";
+    } else {
+      cvParagraph.innerHTML = "Voici mon CV. Cliquez pour le télécharger.";
+    }
+  } else { // écran desktop
+    if (lang === 'en') {
+      cvParagraph.innerHTML = "Below is my CV. You can scroll or download it.";
+    } else {
+      cvParagraph.innerHTML = "Voici mon CV. Vous pouvez le faire défiler ou le télécharger :";
+    }
+  }
+}
+
+// Exécuter au chargement de la page
+updateCVTextForMobile();
+
+// Mettre à jour automatiquement si l'utilisateur change la taille de la fenêtre
+window.addEventListener('resize', updateCVTextForMobile);
+</script>
 </body>
 </html>
