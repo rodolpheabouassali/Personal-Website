@@ -335,6 +335,19 @@ header h1 {
   }
 
 }
+  .overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .overlay.active {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 900;
+  }
+}
 </style>
 </head>
 <body>
@@ -357,7 +370,8 @@ header h1 {
     <div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
   </div>
 </header>
-
+  
+<div class="overlay" id="overlay"></div>
 <div class="container">
   <aside class="sidebar" id="sidebar">
     <img src="my_picture_2.jpg" alt="Rodolphe Abou Assali" class="profile-pic">
@@ -706,8 +720,17 @@ function setLang(lang) {
 }
 setLang('en');
 
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+
 document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('sidebar').classList.toggle('open');
+  sidebar.classList.toggle('open');
+  overlay.classList.toggle('active');
+});
+
+overlay.addEventListener('click', () => {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('active');
 });
 
 // Dark Mode Toggle
@@ -764,6 +787,10 @@ if (window.innerWidth <= 768) {
       top: offsetPosition,
       behavior: "smooth"
     });
+       if (window.innerWidth <= 768) {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+    }
   });
 });
 
