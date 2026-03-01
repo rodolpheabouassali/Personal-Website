@@ -353,6 +353,21 @@ header h1 {
     z-index: 900;
   }
 }
+  .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #008080;  /* match your theme */
+  z-index: 1100;   /* above overlay */
+}
+
+@media (min-width: 769px) {
+  .close-btn { display: none; } /* hide on desktop */
+}
 </style>
 </head>
 <body>
@@ -379,6 +394,7 @@ header h1 {
 <div class="overlay" id="overlay"></div>
 <div class="container">
   <aside class="sidebar" id="sidebar">
+     <button class="close-btn" onclick="closeSidebar()">✕</button>
     <img src="my_picture_2.jpg" alt="Rodolphe Abou Assali" class="profile-pic">
     <h2 data-en="Rodolphe Abou Assali" data-fr="Rodolphe Abou Assali">Rodolphe Abou Assali</h2>
     <nav>
@@ -849,6 +865,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach(section => observer.observe(section));
 });
+  function closeSidebar() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('active');
+}
 </script>
 </body>
 </html>
