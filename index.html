@@ -1,748 +1,591 @@
 <!doctype html>
 <html lang="en"> 
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="description" content="Personal page of Rodolphe Abou Assali – PhD student in differential geometry at IECL Nancy. Research, CV, teaching, and contact information.">
-<meta name="author" content="Rodolphe Abou Assali">
-<meta name="keywords" content="Rodolphe Abou Assali, differential geometry, spectral geometry, PDE's, IECL, PhD, mathematics, research, teaching, Université de Lorraine, IUT Charlemagne, Insititut Elie Cartan de Lorraine, Université Libanaise, Science, Nancy">
-<meta name="google-site-verification" content="7kn_0i8HkzuKAXEn3rsDscwfAvE6WnGXWD6gPxtOcZA" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Personal page of Rodolphe Abou Assali – PhD student in differential geometry at IECL Nancy. Research, CV, teaching, and contact information.">
+  <meta name="author" content="Rodolphe Abou Assali">
+  <meta name="keywords" content="Rodolphe Abou Assali, differential geometry, spectral geometry, PDE's, IECL, PhD, mathematics, research, teaching, Université de Lorraine, IUT Charlemagne, Institut Elie Cartan de Lorraine, Université Libanaise, Science, Nancy">
+  <meta name="google-site-verification" content="7kn_0i8HkzuKAXEn3rsDscwfAvE6WnGXWD6gPxtOcZA" />
+    
+  <title>Page personnelle de Rodolphe Abou Assali</title>
   
-<title>Page personnelle de Rodolphe Abou Assali</title>
-<style>
-  /* Apply same color and no underline to all links */
-a {
-  color: #008080;        /* same teal as sidebar links */
-  text-decoration: none;  /* remove underline */
-  transition: color 0.2s ease;  /* smooth color transition on hover */
-  cursor: pointer;
-}
+  <style>
+    /* Theme Base Definitions */
+    a {
+      color: #008080;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      cursor: pointer;
+    }
 
-/* Optional: change color slightly on hover, no underline */
-a:hover {
-  color: #004d4d;       /* slightly darker teal on hover */
-  text-decoration: none; /* keep no underline */
-}
+    a:hover {
+      color: #004d4d;
+      text-decoration: none;
+    }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f6f7fb;
-    color: #111;
-    transition: all 0.3s ease;
-  }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f6f7fb;
+      color: #111;
+      transition: background 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+    }
 
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    padding: 12px 24px;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-header {
-  flex-wrap: wrap;
-}
-  header h1 {
-    font-size: 20px;
-    margin: 0;
-    color: #222;
-    transition: color 0.3s ease;
-    cursor: pointer;
-  }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 12px 24px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      transition: background 0.3s ease, color 0.3s ease;
+      flex-wrap: wrap;
+    }
 
-  .lang-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+      color: #222;
+      transition: transform 0.2s ease, text-shadow 0.2s ease;
+      cursor: pointer;
+    }
 
-  .lang-switch button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: transform 0.1s ease;
-  }
+    header h1:hover {
+      transform: scale(1.02);
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
 
-  .lang-switch button:hover { transform: scale(1.05); }
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-  }
+    .lang-switch button, #darkModeToggle {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-  .hamburger div {
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-    transition: background 0.3s ease;
-  }
+    .lang-switch button:hover, #darkModeToggle:hover { 
+      transform: scale(1.1);
+    }
 
-  .container {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-  }
+    #darkModeToggle {
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      background: #f6f7fb;
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+    }
 
-  .sidebar {
-    width: 260px;
-    background: #fff;
-    padding: 16px;
-    border-radius: 12px;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease, background 0.3s ease;
-  position: sticky;
-  top: 80px;
-  align-self: flex-start;
-  }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
 
-  .sidebar h2 { margin-top: 0; margin-bottom: 16px; text-align: center; }
-  .profile-pic {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #008080;
-    margin-bottom: 16px;
-  }
+    .hamburger div {
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+      transition: background 0.3s ease;
+    }
 
-  .sidebar nav a {
-    display: block;
-    margin-bottom: 10px;
-   padding: 12px;
-font-size: 16px;
-    color: #008080;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: background 0.2s ease, color 0.2s ease;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-  }
-  .sidebar nav a:hover { background: #008080; color: #fff; }
-  .sidebar nav a.active { background: #008080; color: white; }
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-  /* Pop-out hover effect for sidebar links */
-.sidebar nav a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 128, 128, 0.3);
-}
-/* Pop-out effect for profile picture */
-.profile-pic:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 128, 128, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
+    .sidebar {
+      width: 260px;
+      background: #fff;
+      padding: 16px;
+      border-radius: 12px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: sticky;
+      top: 80px;
+      align-self: flex-start;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    }
 
-/* Pop-out hover effect for header title */
-header h1:hover {
-  transform: scale(1.05);
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
+    .sidebar h2 { margin-top: 0; margin-bottom: 16px; text-align: center; font-size: 20px; }
+    
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #008080;
+      margin-bottom: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-/* Smooth transition for the pop-out effects */
-.sidebar nav a,
-header h1 {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, text-shadow 0.2s ease;
-}
+    .profile-pic:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 128, 128, 0.25);
+      cursor: pointer;
+    }
 
-.lang-switch button:hover,
-#darkModeToggle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 18px rgba(0, 128, 128, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-  .research-links {
-    margin-top: 10px;
-    font-size: 13px;
-    color: #008080;
-    text-align: center;
-    opacity: 0.8;
-  }
+    .sidebar nav { width: 100%; }
 
-  .research-links a {
-    color: #008080;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
+    .sidebar nav a {
+      display: block;
+      margin-bottom: 8px;
+      padding: 12px;
+      font-size: 15px;
+      color: #008080;
+      border-radius: 6px;
+      text-align: center;
+      box-sizing: border-box;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
 
-  .research-links a:hover {
-    color: #004d4d;
-    text-decoration: underline;
-  }
+    .sidebar nav a:hover { 
+      background: #008080; 
+      color: #fff;
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0, 128, 128, 0.2);
+    }
+    
+    .sidebar nav a.active { background: #008080; color: white; font-weight: bold; }
 
-  body.dark .research-links a {
-    color: #80cbc4;
-  }
+    .research-links {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #008080;
+      text-align: center;
+      opacity: 0.9;
+    }
 
-  body.dark .research-links a:hover {
-    color: #26a69a;
-  }
+    .research-links a {
+      font-weight: bold;
+      padding: 0 4px;
+    }
 
-  main { flex: 1; }
+    .research-links a:hover {
+      color: #004d4d;
+      text-decoration: underline;
+    }
 
-.card {
-    background: #fff;
-    padding: 18px;
-    margin-bottom: 16px;
-    border-radius: 14px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0,128,128,0.15); }
+    main { flex: 1; min-width: 0; }
 
-  .card:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0,128,128,0.15); }
+    .card {
+      background: #fff;
+      padding: 24px;
+      margin-bottom: 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    
+    .card:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 6px 18px rgba(0,128,128,0.12); 
+    }
 
-  .card h2 { text-align: center; }
+    .card h2 { text-align: center; margin-top: 0; margin-bottom: 20px; color: #222; }
+    .card h3 { border-bottom: 2px solid #f0f0f0; padding-bottom: 6px; margin-top: 24px; }
 
-  .contact-link {
-    color: #008080;
-    text-decoration: none;
-    font-weight: 500;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  .contact-link:hover {
-    color: #004d4d;
-    text-decoration: underline;
-  }
-/* Container for each PDF */
-.cv-pdf-wrapper {
-  margin-top: 12px;
-}
+    .contact-link {
+      color: #008080;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .contact-link:hover {
+      color: #004d4d;
+      text-decoration: underline;
+    }
 
-/* Embedded PDF */
-.cv-pdf {
-  width: 100%;
-  height: 80vh;       /* 80% of viewport height on desktop */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
+    .cv-pdf-wrapper { margin-top: 16px; }
+    .cv-pdf {
+      width: 100%;
+      height: 75vh;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
 
-/* Adjust PDF height for mobile devices */
-@media (max-width: 768px) {
-  .cv-pdf {
-    height: 60vh;     /* 60% of viewport height on small screens */
-  }
-}
+    .preprints, .teaching-list { padding-left: 20px; }
+    .preprints li, .teaching-list li { margin-bottom: 14px; line-height: 1.5; }
+    .preprints .title { font-weight: bold; display: block; color: #111; }
+    .preprints .submitted { font-size: 0.9em; color: #666; }
 
-  #home a { color: #008080; text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
-  #home a:hover { color: #004d4d; text-decoration: underline; }
+    /* Dark Mode Theme Structural Overrides */
+    body.dark { background: #121212; color: #e0e0e0; }
+    body.dark header { background: #1e1e1e; border-bottom: 1px solid #333; }
+    body.dark header h1 { color: #e0e0e0; }
+    body.dark .hamburger div { background-color: #e0e0e0; }
+    body.dark .sidebar { background: #1e1e1e; color: #e0e0e0; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    body.dark .sidebar nav a { color: #80cbc4; }
+    body.dark .sidebar nav a:hover { background: #004d4d; color: #fff; }
+    body.dark .sidebar nav a.active { background: #008080; color: #fff; }
+    body.dark .card { background: #1f1f1f; color: #e0e0e0; box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
+    body.dark .card h2, body.dark .card h3 { color: #fff; }
+    body.dark .card h3 { border-bottom-color: #333; }
+    body.dark .preprints .title { color: #fff; }
+    body.dark .preprints .submitted { color: #aaa; }
+    body.dark .contact-link, body.dark .research-links a { color: #80cbc4; }
+    body.dark .contact-link:hover, body.dark .research-links a:hover { color: #26a69a; }
 
-  body.dark { background: #121212; color: #e0e0e0; }
-  body.dark header { background: #1e1e1e; border-bottom: 1px solid #444; }
-  body.dark header h1 { color: #e0e0e0; }
-  body.dark .hamburger div { background-color: #e0e0e0; }
-  body.dark .sidebar { background: #1e1e1e; color: #e0e0e0; }
-  body.dark .sidebar nav a { color: #80cbc4; }
-  body.dark .sidebar nav a:hover { background: #004d4d; color: #fff; }
-  body.dark .sidebar nav a.active { background: #009688; color: #fff; }
-  body.dark .card { background: #1f1f1f; color: #e0e0e0; box-shadow: 0 6px 18px rgba(0,0,0,0.4); }
-  body.dark .contact-link { color: #80cbc4; }
-  body.dark .contact-link:hover { color: #26a69a; }
-  body.dark #home a { color: #80cbc4; }
-  body.dark #home a:hover { color: #26a69a; }
+    .overlay { display: none; }
+    .close-btn { display: none; }
 
-  .preprints { margin-top: 12px; padding-left: 20px; }
-  .preprints li { list-style: disc; margin-bottom: 12px; }
-  .preprints .title { font-weight: bold; display: block; }
-  .preprints .submitted { font-size: 0.9em; color: #555; display: inline; margin-left: 0; }
-  body.dark .preprints .submitted { color: #aaa; }
+    /* Responsive Mobile UI Viewport Definition */
+    @media (max-width: 768px) {
+      header { padding: 10px 16px; }
+      header h1 { font-size: 16px; line-height: 1.3; }
+      .hamburger { display: flex; }
+      .container { flex-direction: column; padding: 12px; }
+      main { width: 100%; }
+      .card { padding: 16px; margin-bottom: 16px; }
+      .cv-pdf { display: none; } /* Hide heavy iframes to save mobile memory data */
 
-  iframe.cv-pdf {
-    width: 100%;
-    height: 600px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-top: 12px;
-  }
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 260px;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        border-radius: 0;
+        padding-top: 60px;
+        box-shadow: 4px 0 25px rgba(0,0,0,0.15);
+        box-sizing: border-box;
+      }
 
- @media (max-width: 768px) {
-header {
-  padding: 10px 14px;
-}
+      .sidebar.open { transform: translateX(0); }
+      .close-btn {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #008080;
+        z-index: 1100;
+      }
 
-header h1 {
-  font-size: 16px;
-  line-height: 1.3;
-}
-  /* Stack layout */
-  .container {
-    flex-direction: column;
-    padding: 12px;
-  }
-
-  /* Sidebar becomes slide menu */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 260px;
-    height: 100vh;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    border-radius: 0;
-    padding-top: 80px; /* space for header */
-    box-shadow: 4px 0 20px rgba(0,0,0,0.1);
-  }
-
-  .sidebar.open {
-    transform: translateX(0);
-  }
-
-  /* Show hamburger */
-  .hamburger {
-    display: flex;
-  }
-
-  /* Main full width */
-  main {
-    width: 100%;
-  }
-
-  /* Better spacing */
-  .card {
-    padding: 14px;
-  }
-
-  /* Better text scaling */
-  h1 { font-size: 18px; }
-  h2 { font-size: 18px; }
-  p  { font-size: 15px; }
-
-  /* Prevent horizontal overflow */
-  body {
-    overflow-x: hidden;
-  }
-
-  /* Make iframe fit nicely */
-@media (max-width: 768px) {
-
-  /* Hide embedded CV on mobile */
-  .cv-pdf {
-    display: none;
-  }
-
-}
-
-}
-  .overlay {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .overlay.active {
-    display: block;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 900;
-  }
-}
-  .close-btn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #008080;  /* match your theme */
-  z-index: 1100;   /* above overlay */
-}
-
-@media (min-width: 769px) {
-  .close-btn { display: none; } /* hide on desktop */
-}
-</style>
+      .overlay.active {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 900;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1 data-en="Rodolphe Abou Assali's personal wesbite" data-fr="Page personnelle de Rodolphe Abou Assali" id="headerTitle">
+  <h1 data-en="Rodolphe Abou Assali's personal website" data-fr="Page personnelle de Rodolphe Abou Assali" id="headerTitle">
     Page personnelle de Rodolphe Abou Assali
   </h1>
-  <div style="display:flex; align-items:center; gap:10px;">
+  <div style="display:flex; align-items:center; gap:12px;">
     <div class="lang-switch">
-      <button onclick="setLang('en')" title="English / US & UK" style="width:26px; height:18px; border:none; padding:0; cursor:pointer; position:relative; overflow:hidden; border-radius:2px;">
+      <button onclick="setLang('en')" title="English" style="width:26px; height:18px; position:relative; overflow:hidden; border-radius:2px;">
         <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:url('https://flagcdn.com/gb.svg') no-repeat center/cover;"></div>
         <div style="position:absolute; top:0; left:0; width:100%; height:100%; clip-path: polygon(0 0, 100% 0, 0 100%); background:url('https://flagcdn.com/us.svg') no-repeat center/cover;"></div>
       </button>
-      <button onclick="setLang('fr')" title="Français" style="background:none; border:none; padding:0; cursor:pointer; width:26px; height:18px; transition: transform 0.2s ease;">
-        <img src="https://flagcdn.com/fr.svg" alt="Français" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:3px;">
+      <button onclick="setLang('fr')" title="Français" style="width:26px; height:18px; overflow:hidden; border-radius:2px;">
+        <img src="https://flagcdn.com/fr.svg" alt="Français" style="width:100%; height:100%; object-fit:cover; display:block;">
       </button>
     </div>
-    <button id="darkModeToggle" title="Switch to Dark Mode" style="cursor:pointer;padding:6px 10px;border-radius:8px;border:1px solid #ccc;font-size:16px;background:#f6f7fb;transition: background 0.3s, color 0.3s;">🌙</button>
+    <button id="darkModeToggle" title="Switch to Dark Mode">🌙</button>
     <div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
   </div>
 </header>
   
 <div class="overlay" id="overlay"></div>
+
 <div class="container">
   <aside class="sidebar" id="sidebar">
-     <button class="close-btn" onclick="closeSidebar()">✕</button>
+    <button class="close-btn" onclick="closeSidebar()">✕</button>
     <img src="my_picture_2.jpg" alt="Rodolphe Abou Assali" class="profile-pic">
-    <h2 data-en="Rodolphe Abou Assali" data-fr="Rodolphe Abou Assali">Rodolphe Abou Assali</h2>
+    <h2>Rodolphe Abou Assali</h2>
     <nav>
       <a data-target="home" class="active" data-en="Home" data-fr="Accueil">Home</a>
       <a data-target="cv" data-en="Curriculum Vitae" data-fr="Curriculum Vitae">Curriculum Vitae</a>
       <a data-target="research" data-en="Research" data-fr="Recherche">Research</a>
-      <a data-target="grants" data-en="Research grants and scholarships" data-fr="Bourses et subventions de recherche">Grants & Funding</a>
+      <a data-target="grants" data-en="Grants & Funding" data-fr="Bourses & Financements">Grants & Funding</a>
       <a data-target="teaching" data-en="Teaching" data-fr="Enseignement">Teaching</a>
-      <a data-target="activities" data-en="Events and activities" data-fr="Événements et activités">Activities</a>
-      <a data-target="news" data-en="News & Updates" data-fr="Actualités et mises à jour">News & Updates</a>
+      <a data-target="activities" data-en="Activities" data-fr="Activités">Activities</a>
+      <a data-target="news" data-en="News & Updates" data-fr="Actualités">News & Updates</a>
       <a data-target="contact" data-en="Contact" data-fr="Contact">Contact</a>
     </nav>
     <div class="research-links">
-      <a href="https://www.researchgate.net/profile/Rodolphe-Abou-Assali-2" target="_blank">R<sup>G</sup></a>,
-      <a href="https://arxiv.org/search/math?searchtype=author&query=Assali,+R+A" target="_blank">Ar𝛸iv</a>,
-      <a href="https://hal.science/search/index?q=rodolphe+abou+assali" target="_blank">HAL</a>
+      <a href="https://www.researchgate.net/profile/Rodolphe-Abou-Assali-2" target="_blank" rel="noopener">RG</a> | 
+      <a href="https://arxiv.org/search/math?searchtype=author&query=Assali,+R+A" target="_blank" rel="noopener">arXiv</a> | 
+      <a href="https://hal.science/search/index?q=rodolphe+abou+assali" target="_blank" rel="noopener">HAL</a>
     </div>
   </aside>
 
   <main>
     <!-- HOME -->
-    <section id="home" class="card active">
+    <section id="home" class="card">
       <h2 data-en="Welcome" data-fr="Bienvenue">Welcome</h2>
-      <p data-en="Hello! This is my personal web page. Use the sidebar to navigate."
-         data-fr="Bonjour ! Ceci est ma page personnelle. Utilisez la barre latérale pour naviguer.">
-         Hello! This is my personal web page. Use the sidebar to navigate.
+      <p data-en="Hello! This is my personal web page. Use the sidebar to navigate." data-fr="Bonjour ! Ceci est ma page personnelle. Utilisez la barre latérale pour naviguer.">
+        Hello! This is my personal web page. Use the sidebar to navigate.
       </p>
-      <p data-en="Since December 2023, I am pursuing a Ph.D. in a cotutelle program between the Lebanese University and the University of Lorraine at the <a href='https://iecl.univ-lorraine.fr/home/' target='_blank'>Institut Élie Cartan de Lorraine (IECL)</a> in Nancy, France, under the supervision of <a href='https://nicolas-ginoux.perso.math.cnrs.fr/' target='_blank'>Nicolas Ginoux</a>, <a href='https://iecl.univ-lorraine.fr/membre-iecl/habib-georges/' target='_blank'>Georges Habib</a>, and <a href='https://iecl.univ-lorraine.fr/membre-iecl/tapie-samuel-2/' target='_blank'>Samuel Tapie</a>. Before that, I completed a Master’s program in Fundamental and Applied Mathematics at the Lebanese University and the University of Lorraine."
-         data-fr="Depuis décembre 2023, je poursuis un doctorat en cotutelle entre l'Université Libanaise et l'Université de Lorraine à l'<a href='https://iecl.univ-lorraine.fr/' target='_blank'>Institut Élie Cartan de Lorraine (IECL)</a> à Nancy, France, sous la supervision de <a href='https://nicolas-ginoux.perso.math.cnrs.fr/' target='_blank'>Nicolas Ginoux</a>, <a href='https://iecl.univ-lorraine.fr/membre-iecl/habib-georges/' target='_blank'>Georges Habib</a> et <a href='https://iecl.univ-lorraine.fr/membre-iecl/tapie-samuel-2/' target='_blank'>Samuel Tapie</a>. Avant cela, j’ai suivi un programme de Master (M2) en Mathématiques Fondamentales et Appliquées à l’Université Libanaise et à l’Université de Lorraine.">
-      </p>
+      
+      <!-- Multi-language text containing operational links split into specific target language containers -->
+      <div data-lang="en">
+        <p>Since December 2023, I am pursuing a Ph.D. in a cotutelle program between the Lebanese University and the University of Lorraine at the <a href="https://iecl.univ-lorraine.fr/home/" target="_blank" rel="noopener">Institut Élie Cartan de Lorraine (IECL)</a> in Nancy, France, under the supervision of <a href="https://nicolas-ginoux.perso.math.cnrs.fr/" target="_blank" rel="noopener">Nicolas Ginoux</a>, <a href="https://iecl.univ-lorraine.fr/membre-iecl/habib-georges/" target="_blank" rel="noopener">Georges Habib</a>, and <a href="https://iecl.univ-lorraine.fr/membre-iecl/tapie-samuel-2/" target="_blank" rel="noopener">Samuel Tapie</a>. Before that, I completed a Master’s program in Fundamental and Applied Mathematics at the Lebanese University and the University of Lorraine.</p>
+      </div>
+      <div data-lang="fr" style="display:none;">
+        <p>Depuis décembre 2023, je poursuis un doctorat en cotutelle entre l'Université Libanaise et l'Université de Lorraine à l'<a href="https://iecl.univ-lorraine.fr/" target="_blank" rel="noopener">Institut Élie Cartan de Lorraine (IECL)</a> à Nancy, France, sous la supervision de <a href="https://nicolas-ginoux.perso.math.cnrs.fr/" target="_blank" rel="noopener">Nicolas Ginoux</a>, <a href="https://iecl.univ-lorraine.fr/membre-iecl/habib-georges/" target="_blank" rel="noopener">Georges Habib</a> et <a href="https://iecl.univ-lorraine.fr/membre-iecl/tapie-samuel-2/" target="_blank" rel="noopener">Samuel Tapie</a>. Avant cela, j’ai suivi un programme de Master (M2) en Mathématiques Fondamentales et Appliquées à l’Université Libanaise et à l’Université de Lorraine.</p>
+      </div>
     </section>
 
     <!-- CV -->
     <section id="cv" class="card">
       <h2 data-en="Curriculum Vitae" data-fr="Curriculum Vitae">Curriculum Vitae</h2>
-      <p data-en="Below is my CV." 
-         data-fr="Voici mon CV.">
-       Below is my CV. 
-      </p>
-      <!-- French PDF -->
+      <p data-en="Below is my CV." data-fr="Voici mon CV.">Below is my CV.</p>
+      
       <div class="cv-pdf-wrapper" data-lang="fr">
         <iframe class="cv-pdf" src="CV_Rodolphe_Français.pdf"></iframe>
-        <p><a href="CV_Rodolphe_Français.pdf" target="_blank" data-fr="Télécharger le CV en français">Télécharger le CV en français</a></p>
+        <p style="text-align:center; margin-top:10px;"><a href="CV_Rodolphe_Français.pdf" target="_blank" rel="noopener">📄 Télécharger le CV en français</a></p>
       </div>
-      <!-- English PDF -->
       <div class="cv-pdf-wrapper" data-lang="en" style="display:none;">
         <iframe class="cv-pdf" src="CV_Rodolphe_English.pdf"></iframe>
-        <p><a href="CV_Rodolphe_English.pdf" target="_blank" data-en="Download CV in English">Download CV in English</a></p>
+        <p style="text-align:center; margin-top:10px;"><a href="CV_Rodolphe_English.pdf" target="_blank" rel="noopener">📄 Download CV in English</a></p>
       </div>
     </section>
 
-<!-- RESEARCH -->
-<section id="research" class="card">
-  <h2 data-en="Research" data-fr="Recherche">Research</h2>
+    <!-- RESEARCH -->
+    <section id="research" class="card">
+      <h2 data-en="Research" data-fr="Recherche">Research</h2>
+      
+      <div data-lang="en">
+        <p>My research field is differential geometry, with a particular interest in spectral geometry.</p>
+        <p>I am part of the ANR <a href="https://ilariamondello.com/language/fr/anr-orbiscar/" target="_blank" rel="noopener">Orbiscar</a> project: orbifolds, scalar curvature, and rigidity. I am also a member of the <a href="https://smf.emath.fr/" target="_blank" rel="noopener">SMF</a> and the <a href="http://smai.emath.fr/" target="_blank" rel="noopener">SMAI</a>.</p>
+      </div>
+      <div data-lang="fr" style="display:none;">
+        <p>Mon domaine de recherche est la géométrie différentielle, avec un intérêt particulier pour la géométrie spectrale.</p>
+        <p>Je fais partie de l’ANR <a href="https://ilariamondello.com/language/fr/anr-orbiscar/" target="_blank" rel="noopener">Orbiscar</a> : orbifolds, courbure scalaire et rigidité. Je suis également membre de la <a href="https://smf.emath.fr/" target="_blank" rel="noopener">SMF</a> et de la <a href="http://smai.emath.fr/" target="_blank" rel="noopener">SMAI</a>.</p>
+      </div>
 
- <p 
-  id="research-text"
-  data-en="My research field is differential geometry, with a particular interest in spectral geometry.<br><br>
-  I am part of the ANR <a href='https://ilariamondello.com/language/fr/anr-orbiscar/' target='_blank'>Orbiscar</a> project: orbifolds, scalar curvature, and rigidity.
-  I am also a member at the <a href='https://smf.emath.fr/' target='_blank'>SMF</a> and the <a href='http://smai.emath.fr/' target='_blank'>SMAI</a>."
-  
-  data-fr="Mon domaine de recherche est la géométrie différentielle, avec un intérêt particulier pour la géométrie spectrale.<br><br>
-  Je fais partie de l’ANR <a href='https://ilariamondello.com/language/fr/anr-orbiscar/' target='_blank'>Orbiscar</a> : orbifolds, courbure scalaire et rigidité.
-  Je suis également membre de la <a href='https://smf.emath.fr/' target='_blank'>SMF</a> et de la <a href='http://smai.emath.fr/' target='_blank'>SMAI</a>."
->
-</p>
-
-  <h3 data-en="Preprints" data-fr="Prépublications">Preprints</h3>
-  <div class="preprints">
-    <ul>
-      <li>
-        <span class="title" data-en="Geometric eigenvalue estimates of Kuttler-Sigillito type on differential forms" 
-              data-fr="Geometric eigenvalue estimates of Kuttler-Sigillito type on differential forms">
-          Geometric eigenvalue estimates of Kuttler-Sigillito type on differential forms
-        </span>
-        <span class="submitted" data-en="Submitted, 2026 — " data-fr="Soumis, 2026 — ">Submitted, 2026 — </span>
-        <a href="https://arxiv.org/abs/2602.09876" target="_blank">ar𝛸iv</a>
-      </li>
-      <li>
-        <span class="title" data-en="Biharmonic Steklov problems with Neumann boundary conditions and spectral inequalities on differential forms" 
-              data-fr="Biharmonic Steklov problems with Neumann boundary conditions and spectral inequalities on differential forms">
-          Biharmonic Steklov problems with Neumann boundary conditions and spectral inequalities on differential forms
-        </span>
-        <span class="submitted" data-en="Submitted, 2025 — " data-fr="Soumis, 2025 — ">Submitted, 2025 — </span>
-        <a href="https://arxiv.org/abs/2507.05049" target="_blank">ar𝛸iv</a>
-      </li>
-    </ul>
-  </div>
-</section>
-
-
-    <!-- GRANTS -->
-   <section id="grants" class="card">
-  <h2 data-en="Research grants and scholarships" data-fr="Bourses et subventions de recherche">
-    Research grants and scholarships
-  </h2>
-  <ul>
-    <li data-en="<strong>2023-2026</strong> : Doctoral scholarship from the <a href='https://institutfrancais-liban.com/bourse/bourses-safar/#/' target='_blank'>SAFAR program</a> of the French Embassy in Lebanon, for a PhD under the supervision of <a href='https://nicolas-ginoux.perso.math.cnrs.fr/'>Nicolas Ginoux</a>, <a href='https://iecl.univ-lorraine.fr/membre-iecl/habib-georges/'>Georges Habib</a>, and <a href='https://iecl.univ-lorraine.fr/membre-iecl/tapie-samuel-2/'>Samuel Tapie</a>" 
-        data-fr="<strong>2023-2026</strong> : Bourse doctorale du <a href='https://institutfrancais-liban.com/bourse/bourses-safar/#/' target='_blank'>programme SAFAR</a> de l'ambassade de France au Liban, pour un doctorat sous la supervision de <a href='https://nicolas-ginoux.perso.math.cnrs.fr/'>Nicolas Ginoux</a>, <a href='https://iecl.univ-lorraine.fr/membre-iecl/habib-georges/'>Georges Habib</a> et <a href='https://iecl.univ-lorraine.fr/membre-iecl/tapie-samuel-2/'>Samuel Tapie</a>">
-        <strong>2023-2026</strong> – Bourse doctorale du programme SAFAR de l'ambassade de France au Liban, pour un doctorat sous la supervision de Nicolas Ginoux, Georges Habib et Samuel Tapie
-    </li>
-    <li 
-  data-en="<strong>2026</strong> : Orion Grant, for participation in international conferences"
-  data-fr="<strong>2026</strong> : Subvention Orion, pour participation à des congrès internationaux"
->
-  <strong>2026</strong> – Subvention Orion, pour participation à des congrès internationaux
-</li>
-    <li data-en="<strong>2025</strong> : <a href='https://doctorat.univ-lorraine.fr/fr/international/dream' target='_blank'>DrEAM</a> scholarship from the University of Lorraine under the Lorraine University of Excellence Initiative (LUE), for a 2-month research stay at Sapienza University under the supervision of <a href='https://phd.uniroma1.it/web/ALESSANDRO-SAVO_nC668_EN.aspx' target='_blank'>Alessandro Savo</a>"
-        data-fr="<strong>2025</strong> : Bourse <a href='https://doctorat.univ-lorraine.fr/fr/international/dream' target='_blank'>DrEAM</a> de l’Université de Lorraine dans le cadre de l’Initiative Lorraine Université d’Excellence (LUE), pour effectuer un séjour de recherche de deux mois à l'Université de Sapienza sous la supervision d'<a href='https://phd.uniroma1.it/web/ALESSANDRO-SAVO_nC668_EN.aspx' target='_blank'>Alessandro Savo</a>">
-        <strong>2025</strong> – Bourse DrEAM de l’Université de Lorraine dans le cadre de l’Initiative Lorraine Université d’Excellence (LUE), pour effectuer un séjour de recherche de deux mois à l'université de Sapienza sous la supervision d'Alessandro Savo
-    </li>
-    <li data-en="<strong>2023</strong> : Master Grants from the <a href='https://www.univ-lorraine.fr/osezlarecherche/en/home/' target='_blank'>Orion program</a> of the University of Lorraine, for a 4-month research stay at IECL under the supervision of <a href='https://nicolas-ginoux.perso.math.cnrs.fr/'>Nicolas Ginoux</a>, <a href='https://iecl.univ-lorraine.fr/membre-iecl/habib-georges/'>Georges Habib</a>, and <a href='https://iecl.univ-lorraine.fr/membre-iecl/tapie-samuel-2/'>Samuel Tapie</a>"
-        data-fr="<strong>2023</strong> : Bourse Master Grants du <a href='https://www.univ-lorraine.fr/osezlarecherche/en/home/'_blank'>programme Orion</a> de l'université de Lorraine, pour effectuer un séjour de recherche de 4 mois à l'IECL sous la direction de <a href='https://nicolas-ginoux.perso.math.cnrs.fr/'>Nicolas Ginoux</a>, <a href='https://iecl.univ-lorraine.fr/membre-iecl/habib-georges/'>Georges Habib</a> et <a href='https://iecl.univ-lorraine.fr/membre-iecl/tapie-samuel-2/'>Samuel Tapie</a>">
-        <strong>2023</strong> : Bourse Master Grants du programme Orion de l'université de Lorraine, pour effectuer un séjour de recherche de 4 mois à l'IECL sous la direction de Nicolas Ginoux, Georges Habib et Samuel Tapie
-    </li>
-  </ul>
-</section>
-
-<!-- Teaching -->
-
-    <section id="teaching" class="card">
-      <h2 data-en="Teaching" data-fr="Enseignement">Teaching</h2>
-      <p data-en="During my PhD, I have completed training dedicated to higher education teaching offered by the doctoral school. Having obtained a University Diploma in Education from the Lebanese University, I plan to obtain the higher education teaching certification provided by the University of Lorraine at the end of my thesis. In addition to this training, I have gained teaching experience through private tutoring and as a lecturer and teaching assistant at IUT Nancy‑Charlemagne, Computer Science Department (January 2025 – June 2025), with details provided below:"
-         data-fr="Durant mon parcours de thèse jusqu’à présent, j’ai suivi les formations dédiées à l’enseignement supérieur proposées par l’école doctorale. Ayant obtenu un Diplôme Universitaire en Éducation de l’Université Libanaise, je prévois d’obtenir le label d’enseignement supérieur proposé par l’Université de Lorraine à la fin de ma thèse. En complément de ces formations, j’ai acquis de l’expérience en donnant des cours particuliers et en assurant des responsabilités d’enseignement, notamment en tant que chargé de cours et de travaux dirigés à l’IUT Nancy‑Charlemagne, Département Informatique (janvier 2025 – juin 2025), dont vous trouverez les détails ci-dessous :">
-Durant mon parcours de thèse jusqu’à présent, j’ai suivi les formations dédiées à l’enseignement supérieur proposées par l’école doctorale. Ayant obtenu un Diplôme Universitaire en Éducation de l’Université Libanaise, je prévois d’obtenir le label d’enseignement supérieur proposé par l’Université de Lorraine à la fin de ma thèse. En complément de ces formations, j’ai acquis de l’expérience en donnant des cours particuliers et en assurant des responsabilités d’enseignement, notamment en tant que chargé de cours et de travaux dirigés à l’IUT Nancy‑Charlemagne, Département Informatique (janvier 2025 – juin 2025), dont vous trouverez les détails ci-dessous :
-      </p>
-      <ul class="teaching-list">
-        <li data-en="Descriptive Statistics – IUT Nancy-Charlemagne, 1st Year Computer Science" data-fr="Statistiques descriptives – IUT Nancy-Charlemagne, L1 Informatique">
-          Statistiques descriptives – IUT Nancy-Charlemagne, L1 Informatique
-        </li>
-        <li data-en="Optimization Methods – IUT Nancy-Charlemagne, 2nd Year Computer Science, DACS" data-fr="Méthodes d’optimisation – IUT Nancy-Charlemagne, L2 Informatique, DACS">
-          Méthodes d’optimisation – IUT Nancy-Charlemagne, L2 Informatique, DACS
-        </li>
-        <li data-en="Mathematical Complements and Modelling – IUT Nancy-Charlemagne, 3rd Year Computer Science, RA-IL" data-fr=" Compléments de mathématiques et Modélisation – IUT Nancy-Charlemagne, L3 Informatique, RA-IL">
-         Compléments de mathématiques et Modélisation – IUT Nancy-Charlemagne, L3 Informatique, RA-IL
-        </li>
-      </ul>
-      <p data-en="In the spring semester of 2026, I will be teaching the following courses:" 
-      data-fr="Au printemps 2026, j’enseignerai les cours suivants :">
-    </p>
-         <ul class="teaching-list">
-        <li data-en="Descriptive Statistics – IUT Nancy-Charlemagne, 1st Year Computer Science" data-fr="Statistiques descriptives – IUT Nancy-Charlemagne, L1 Informatique">
-          Statistiques descriptives – IUT Nancy-Charlemagne, L1 Informatique
-        </li>
-           <li data-en="Graph Theory – IUT Nancy-Charlemagne, 1st Year Computer Science" data-fr="Théorie des graphes – IUT Nancy-Charlemagne, L1 Informatique">
-          Théorie des graphes– IUT Nancy-Charlemagne, L1 Informatique
-        </li>
-         <li data-en="Numerical Methods – IUT Nancy-Charlemagne, 1st Year Computer Science" data-fr="Méthodes numériques – IUT Nancy-Charlemagne, L1 Informatique">
-          Méthodes numériques– IUT Nancy-Charlemagne, L1 Informatique
-        </li>
-        <li data-en="Optimization Methods – IUT Nancy-Charlemagne, 2nd Year Computer Science, DACS" data-fr="Méthodes d’optimisation – IUT Nancy-Charlemagne, L2 Informatique, DACS">
-          Méthodes d’optimisation – IUT Nancy-Charlemagne, L2 Informatique, DACS
-        </li>
-      </ul>
-
+      <h3 data-en="Preprints" data-fr="Prépublications">Preprints</h3>
+      <div class="preprints">
+        <ul>
+          <li>
+            <span class="title">Geometric eigenvalue estimates of Kuttler-Sigillito type on differential forms</span>
+            <span class="submitted" data-en="Submitted, 2026 — " data-fr="Soumis, 2026 — ">Submitted, 2026 — </span>
+            <a href="https://arxiv.org/abs/2602.09876" target="_blank" rel="noopener">arXiv</a>
+          </li>
+          <li>
+            <span class="title">Biharmonic Steklov problems with Neumann boundary conditions and spectral inequalities on differential forms</span>
+            <span class="submitted" data-en="Submitted, 2025 — " data-fr="Soumis, 2025 — ">Submitted, 2025 — </span>
+            <a href="https://arxiv.org/abs/2507.05049" target="_blank" rel="noopener">arXiv</a>
+          </li>
+        </ul>
+      </div>
     </section>
 
-<!-- ACTIVITIES -->
-<section id="activities" class="card">
-  <h2 data-en="Events and activities" data-fr="Événements et activités">Events and activities</h2>
+    <!-- GRANTS -->
+    <section id="grants" class="card">
+      <h2 data-en="Research Grants and Scholarships" data-fr="Bourses et subventions de recherche">Research grants and scholarships</h2>
+      
+      <div data-lang="en">
+        <ul>
+          <li><strong>2023-2026</strong>: Doctoral scholarship from the <a href="https://institutfrancais-liban.com/bourse/bourses-safar/#/" target="_blank" rel="noopener">SAFAR program</a> of the French Embassy in Lebanon, for a PhD under the supervision of Nicolas Ginoux, Georges Habib, and Samuel Tapie.</li>
+          <li><strong>2026</strong>: Orion Grant, for participation in international conferences.</li>
+          <li><strong>2025</strong>: <a href="https://doctorat.univ-lorraine.fr/fr/international/dream" target="_blank" rel="noopener">DrEAM</a> scholarship from the University of Lorraine under the Lorraine University of Excellence Initiative (LUE), for a 2-month research stay at Sapienza University under the supervision of Alessandro Savo.</li>
+          <li><strong>2023</strong>: Master Grants from the <a href="https://www.univ-lorraine.fr/osezlarecherche/en/home/" target="_blank" rel="noopener">Orion program</a> of the University of Lorraine, for a 4-month research stay at IECL under the supervision of Nicolas Ginoux, Georges Habib, and Samuel Tapie.</li>
+        </ul>
+      </div>
+      <div data-lang="fr" style="display:none;">
+        <ul>
+          <li><strong>2023-2026</strong> : Bourse doctorale du <a href="https://institutfrancais-liban.com/bourse/bourses-safar/#/" target="_blank" rel="noopener">programme SAFAR</a> de l'ambassade de France au Liban, pour un doctorat sous la supervision de Nicolas Ginoux, Georges Habib et Samuel Tapie.</li>
+          <li><strong>2026</strong> : Subvention Orion, pour participation à des congrès internationaux.</li>
+          <li><strong>2025</strong> : Bourse <a href="https://doctorat.univ-lorraine.fr/fr/international/dream" target="_blank" rel="noopener">DrEAM</a> de l’Université de Lorraine dans le cadre de l’Initiative Lorraine Université d’Excellence (LUE), pour effectuer un séjour de recherche de deux mois à l'Université de Sapienza sous la supervision d'Alessandro Savo.</li>
+          <li><strong>2023</strong> : Bourse Master Grants du <a href="https://www.univ-lorraine.fr/osezlarecherche/en/home/" target="_blank" rel="noopener">programme Orion</a> de l'université de Lorraine, pour effectuer un séjour de recherche de 4 mois à l'IECL sous la direction de Nicolas Ginoux, Georges Habib et Samuel Tapie.</li>
+        </ul>
+      </div>
+    </section>
 
-  <!-- English version -->
-  <div class="activities-lang" data-lang="en">
-    <p>I have participated in numerous events and conferences in mathematics, particularly in differential geometry. I have also taken on organizational responsibilities and engaged in scientific outreach activities. Details are provided below.</p>
+    <!-- TEACHING -->
+    <section id="teaching" class="card">
+      <h2 data-en="Teaching" data-fr="Enseignement">Teaching</h2>
+      <p data-en="During my PhD, I have completed training dedicated to higher education teaching offered by the doctoral school. Having obtained a University Diploma in Education from the Lebanese University, I plan to obtain the Higher Education Teaching Certification provided by the University of Lorraine at the end of my thesis. In addition to this training, I have gained teaching experience through private tutoring and as a lecturer and teaching assistant at IUT Nancy‑Charlemagne, Computer Science Department (January 2025 – June 2025), with details provided below:"
+         data-fr="Durant mon parcours de thèse jusqu’à présent, j’ai suivi les formations dédiées à l’enseignement supérieur proposées par l’école doctorale. Ayant obtenu un Diplôme Universitaire en Éducation de l’Université Libanaise, je prévois d’obtenir le label d’enseignement supérieur proposé par l’Université de Lorraine à la fin de ma thèse. En complément de ces formations, j’ai acquis de l’expérience en donnant des cours particuliers et en assurant des responsabilités d’enseignement, notamment en tant que chargé de cours et de travaux dirigés à l’IUT Nancy‑Charlemagne, Département Informatique (janvier 2025 – juin 2025), dont vous trouverez les détails ci-dessous :">
+      </p>
+      
+      <ul class="teaching-list">
+        <li data-en="Descriptive Statistics – IUT Nancy-Charlemagne, 1st Year Computer Science" data-fr="Statistiques descriptives – IUT Nancy-Charlemagne, L1 Informatique"></li>
+        <li data-en="Optimization Methods – IUT Nancy-Charlemagne, 2nd Year Computer Science, DACS" data-fr="Méthodes d’optimisation – IUT Nancy-Charlemagne, L2 Informatique, DACS"></li>
+        <li data-en="Mathematical Complements and Modelling – IUT Nancy-Charlemagne, 3rd Year Computer Science, RA-IL" data-fr="Compléments de mathématiques et Modélisation – IUT Nancy-Charlemagne, L3 Informatique, RA-IL"></li>
+      </ul>
+      
+      <p data-en="In the spring semester of 2026, I will be teaching the following courses:" data-fr="Au printemps 2026, j’enseignerai les cours suivants :"></p>
+      
+      <ul class="teaching-list">
+        <li data-en="Descriptive Statistics – IUT Nancy-Charlemagne, 1st Year Computer Science" data-fr="Statistiques descriptives – IUT Nancy-Charlemagne, L1 Informatique"></li>
+        <li data-en="Graph Theory – IUT Nancy-Charlemagne, 1st Year Computer Science" data-fr="Théorie des graphes – IUT Nancy-Charlemagne, L1 Informatique"></li>
+        <li data-en="Numerical Methods – IUT Nancy-Charlemagne, 1st Year Computer Science" data-fr="Méthodes numériques – IUT Nancy-Charlemagne, L1 Informatique"></li>
+        <li data-en="Optimization Methods – IUT Nancy-Charlemagne, 2nd Year Computer Science, DACS" data-fr="Méthodes d’optimisation – IUT Nancy-Charlemagne, L2 Informatique, DACS"></li>
+      </ul>
+    </section>
 
-    <!-- Talks -->
-    <h3>Talks</h3>
+    <!-- ACTIVITIES -->
+    <section id="activities" class="card">
+      <h2 data-en="Events and Activities" data-fr="Événements et activités">Events and activities</h2>
 
-    <h4>Speaker</h4>
-    <ul>
-      <li><strong>2026</strong>: <a href='https://sites.google.com/view/esdg-aq26/home-page' target='_blank'>ESDG</a> L'Aquila - Poster presenting <a href='https://doi.org/10.48550/arXiv.2507.05049' target='_blank'>arXiv:2507.05049</a><br>
-  <em>Biharmonic Steklov problems and spectral inequalities on differential forms.</em></li>
-      <li><strong>2026</strong>: <a href= 'https://sites.google.com/view/phd-seminar-2026/home' target='_blank'>Phd away days </a> at University of Luxembourg<br>
-          <em>Steklov problems and spectral inequalities in planar domains.</em></li>
-      <li><strong>2025</strong>: <a href= 'https://www.sbai.uniroma1.it/node/8274' target='_blank'>Seminar of the department of Basic and Applied Sciences for Engineering </a> at Sapienza University, Rome<br>
-          <em>Biharmonic Steklov problems and spectral inequalities for differential forms.</em></li>
-      <li><strong>2025</strong>: <a href='https://www.mathematik.uni-konstanz.de/forschung/kolloquien-und-oberseminare/oberseminar-partielle-differentialgleichungen/oberseminar-partielle-differentialgleichungen-detail/termin/biharmonic-steklov-problems-and-spectral-inequalities-for-differential-forms/' target='_blank'>Advanced PDE Seminar</a>, Department of Mathematics and Statistics, University of Konstanz, Germany<br>
-          <em>Biharmonic Steklov problems and spectral inequalities for differential forms.</em></li>
-      <li><strong>2025</strong>:  <a href='https://iecl.univ-lorraine.fr/events/problemes-de-steklov-biharmoniques-et-inegalites-spectrales-sur-les-formes-differentielles/' target='_blank'>Differential Geometry Seminar</a>, IECL Nancy<br>
-          <em>Biharmonic Steklov problems and spectral inequalities on differential forms.</em></li>
-      <li><strong>2024</strong>: <a href='https://iecl.univ-lorraine.fr/events/journee-des-doctorant-e-s/' target='_blank'>IECL PhD Students Day</a>, Nancy<br>
-          <em>The Biharmonic Steklov Operator.</em></li>
-      <li><strong>2024</strong>: <a href='https://ul.edu.lb/files/ann/20240913-ULDSST-ConAn-Program.pdf' target='_blank'>Doctoral Forum of the EDST </a>, Lebanese University, Beirut<br>
-          <em>The Biharmonic Steklov Problem on Differential Forms.</em></li>
-    </ul>
+      <!-- English activities panel -->
+      <div class="activities-lang" data-lang="en">
+        <p>I have participated in numerous events and conferences in mathematics, particularly in differential geometry. I have also taken on organizational responsibilities and engaged in scientific outreach activities. Details are provided below.</p>
 
-    <h4>Attendee</h4>
-    <ul>
-      <li><strong>2026</strong>: European School of Differential Geometry <a href='https://sites.google.com/view/esdg-aq26/home-page' target='_blank'>(ESDG)</a>, L'Aquila.</li>
-<li><strong>2026</strong>: Working group on the spectrum of hyperbolic surfaces, IECL Nancy.</li>
-      <li><strong>2025</strong>: Differential Geometry at L’Aquila 
-          <a href="https://sites.google.com/view/dgaq25" target="_blank">(DG@AQ25)</a></li>
-      <li><strong>2024</strong>: European Doctorate School of Differential Geometry 
-          <a href="https://imag.ugr.es/esdg/" target="_blank">(ESDG)</a>, Granada</li>
-      <li><strong>2024</strong>: Working group on the spectrum of the Steklov operator, IECL Nancy</li>
-      <li><strong>2023</strong>: Geometry Day, IECL Nancy</li>
-    </ul>
+        <h3>Talks</h3>
+        <h4>Speaker</h4>
+        <ul>
+          <li><strong>2026</strong>: <a href="https://sites.google.com/view/esdg-aq26/home-page" target="_blank" rel="noopener">ESDG</a> L'Aquila - Poster presenting <a href="https://doi.org/10.48550/arXiv.2507.05049" target="_blank" rel="noopener">arXiv:2507.05049</a><br><em>Biharmonic Steklov problems and spectral inequalities on differential forms.</em></li>
+          <li><strong>2026</strong>: <a href="https://sites.google.com/view/phd-seminar-2026/home" target="_blank" rel="noopener">PhD away days</a> at University of Luxembourg<br><em>Steklov problems and spectral inequalities in planar domains.</em></li>
+          <li><strong>2025</strong>: <a href="https://www.sbai.uniroma1.it/node/8274" target="_blank" rel="noopener">Seminar of the department of Basic and Applied Sciences for Engineering</a> at Sapienza University, Rome<br><em>Biharmonic Steklov problems and spectral inequalities for differential forms.</em></li>
+          <li><strong>2025</strong>: <a href="https://www.mathematik.uni-konstanz.de/forschung/kolloquien-und-oberseminare/oberseminar-partielle-differentialgleichungen/oberseminar-partielle-differentialgleichungen-detail/termin/biharmonic-steklov-problems-and-spectral-inequalities-for-differential-forms/" target="_blank" rel="noopener">Advanced PDE Seminar</a>, University of Konstanz, Germany<br><em>Biharmonic Steklov problems and spectral inequalities for differential forms.</em></li>
+          <li><strong>2025</strong>: <a href="https://iecl.univ-lorraine.fr/events/problemes-de-steklov-biharmoniques-et-inegalites-spectrales-sur-les-formes-differentielles/" target="_blank" rel="noopener">Differential Geometry Seminar</a>, IECL Nancy<br><em>Biharmonic Steklov problems and spectral inequalities on differential forms.</em></li>
+          <li><strong>2024</strong>: <a href="https://iecl.univ-lorraine.fr/events/journee-des-doctorant-e-s/" target="_blank" rel="noopener">IECL PhD Students Day</a>, Nancy<br><em>The Biharmonic Steklov Operator.</em></li>
+          <li><strong>2024</strong>: <a href="https://ul.edu.lb/files/ann/20240913-ULDSST-ConAn-Program.pdf" target="_blank" rel="noopener">Doctoral Forum of the EDST</a>, Lebanese University, Beirut<br><em>The Biharmonic Steklov Problem on Differential Forms.</em></li>
+        </ul>
 
-    <!-- Organization & Outreach -->
-    <h3>Organization & Scientific Outreach</h3>
-    <ul>
-      <li><strong>2024–Present</strong>: Co-organizer of the <a href='https://iecl.univ-lorraine.fr/evenements-2/doctorants/' target='_blank'>PhD Students Seminar</a> at IECL.</li>
-       <li><strong>2026</strong>: Co-organizer of the <a href="https://sites.google.com/view/phd-seminar-2026/home"target="_blank">PhD away days</a> in Luxembourg with the PhD students of the University of Luxembourg.</li>
-      <li><strong>2025</strong>: Co-organizer of the <a href="https://sites.google.com/view/phdawaydays2025/home-page"target="_blank">PhD away days</a> in Nancy with the PhD students of the University of Luxembourg.</li>
-      <li><strong>2024–2025</strong>: Co-facilitator of the <a href="http://departement.maths-nancy.xyz/club/" target="_blank">Math Club</a> at Lycée Jacques Callot, Vandœuvre-lès-Nancy.</li>
-      <li><strong>2024–2025</strong>: Co-facilitator for Math workshops at <a href="https://fst.univ-lorraine.fr/activites-et-evenements/fete-de-la-science/" target="_blank">the Science Festival</a> at FST and Jeanne d’Arc Elementary School.</li>
-      <li><strong>2021–2023</strong>: Student representative in M1 and M2.</li>
-    </ul>
-  </div>
+        <h4>Attendee</h4>
+        <ul>
+          <li><strong>2026</strong>: <a href="https://sites.google.com/view/esdg-aq26/home-page" target="_blank" rel="noopener">European School of Differential Geometry (ESDG)</a>, L'Aquila.</li>
+          <li><strong>2026</strong>: Working group on the spectrum of hyperbolic surfaces, IECL Nancy.</li>
+          <li><strong>2025</strong>: Differential Geometry at L’Aquila <a href="https://sites.google.com/view/dgaq25" target="_blank" rel="noopener">(DG@AQ25)</a></li>
+          <li><strong>2024</strong>: European Doctorate School of Differential Geometry <a href="https://imag.ugr.es/esdg/" target="_blank" rel="noopener">(ESDG)</a>, Granada</li>
+          <li><strong>2024</strong>: Working group on the spectrum of the Steklov operator, IECL Nancy</li>
+          <li><strong>2023</strong>: Geometry Day, IECL Nancy</li>
+        </ul>
 
-  <!-- French version -->
-  <div class="activities-lang" data-lang="fr" style="display:none;">
-    <p>J’ai participé à de nombreux événements et conférences en mathématiques, en particulier en géométrie différentielle. J’ai également assumé des responsabilités d’organisation et pris part à des activités de médiation scientifique. Les détails sont présentés ci‑dessous</p>
+        <h3>Organization & Scientific Outreach</h3>
+        <ul>
+          <li><strong>2024–Present</strong>: Co-organizer of the <a href="https://iecl.univ-lorraine.fr/evenements-2/doctorants/" target="_blank" rel="noopener">PhD Students Seminar</a> at IECL.</li>
+          <li><strong>2026</strong>: Co-organizer of the <a href="https://sites.google.com/view/phd-seminar-2026/home" target="_blank" rel="noopener">PhD away days</a> in Luxembourg with the PhD students of the University of Luxembourg.</li>
+          <li><strong>2025</strong>: Co-organizer of the <a href="https://sites.google.com/view/phdawaydays2025/home-page" target="_blank" rel="noopener">PhD away days</a> in Nancy with the PhD students of the University of Luxembourg.</li>
+          <li><strong>2024–2025</strong>: Co-facilitator of the <a href="http://departement.maths-nancy.xyz/club/" target="_blank" rel="noopener">Math Club</a> at Lycée Jacques Callot, Vandœuvre-lès-Nancy.</li>
+          <li><strong>2024–2025</strong>: Co-facilitator for Math workshops at <a href="https://fst.univ-lorraine.fr/activites-et-evenements/fete-de-la-science/" target="_blank" rel="noopener">the Science Festival</a> at FST and Jeanne d’Arc Elementary School.</li>
+          <li><strong>2021–2023</strong>: Student representative in M1 and M2.</li>
+        </ul>
+      </div>
 
-    <!-- Talks -->
-    <h3>Exposés</h3>
+      <!-- French activities panel -->
+      <div class="activities-lang" data-lang="fr" style="display:none;">
+        <p>J’ai participé à de nombreux événements et conférences en mathématiques, en particulier en géométrie différentielle. J’ai également assumé des responsabilités d’organisation et pris part à des activités de médiation scientifique. Les détails sont présentés ci‑dessous.</p>
 
-    <h4>Orateur</h4>
-    <ul>
-      <li><strong>2026</strong>: <a href='https://sites.google.com/view/esdg-aq26/home-page' target='_blank'>ESDG</a> L'Aquila - Poster présentant l'article <a href='https://doi.org/10.48550/arXiv.2507.05049' target='_blank'>arXiv:2507.05049</a><br>
-  <em>Biharmonic Steklov problems and spectral inequalities on differential forms.</em></li>
-       <li><strong>2026</strong>: <a href= 'https://sites.google.com/view/phd-seminar-2026/home' target='_blank'>Phd away days </a> à l'Université du Luxembourg <br>
-          <em>Steklov problems and spectral inequalities in planar domains.</em></li>
-      <li><strong>2025</strong>: <a href= 'https://www.sbai.uniroma1.it/node/8274' target='_blank'>Séminaire du département des sciences fondamentales et appliquées pour l'ingénierie</a> à l'Université La Sapienza, Rome<br>
-          <em>Biharmonic Steklov problems and spectral inequalities for differential forms.</em></li>
-      <li><strong>2025</strong>: <a href='https://www.mathematik.uni-konstanz.de/forschung/kolloquien-und-oberseminare/oberseminar-partielle-differentialgleichungen/oberseminar-partielle-differentialgleichungen-detail/termin/biharmonic-steklov-problems-and-spectral-inequalities-for-differential-forms/' target='_blank'>Séminaire avancé d'EDP</a> du département de mathématiques et de statistique à l'Université de Constance, Allemagne<br>
-          <em>Biharmonic Steklov problems and spectral inequalities for differential forms.</em></li>
-      <li><strong>2025</strong>:  <a href='https://iecl.univ-lorraine.fr/events/problemes-de-steklov-biharmoniques-et-inegalites-spectrales-sur-les-formes-differentielles/' target='_blank'>Séminaire de géométrie différentielle</a> de l'IECL, Nancy<br>
-          <em>Problèmes de Steklov biharmoniques et inégalités spectrales sur les formes différentielles.</em></li>
-      <li><strong>2024</strong>:  <a href='https://iecl.univ-lorraine.fr/events/journee-des-doctorant-e-s/' target='_blank'>Journée des doctorants de l'IECL</a>, Nancy<br>
-          <em>The Biharmonic Steklov Operator.</em></li>
-      <li><strong>2024</strong>: <a href='https://ul.edu.lb/files/ann/20240913-ULDSST-ConAn-Program.pdf' target='_blank'>Forum doctoral de l'EDST </a>à l’Université Libanaise, Beyrouth<br>
-          <em>Problème de Steklov biharmonique sur les formes différentielles.</em></li>
-    </ul>
+        <h3>Exposés</h3>
+        <h4>Orateur</h4>
+        <ul>
+          <li><strong>2026</strong>: <a href="https://sites.google.com/view/esdg-aq26/home-page" target="_blank" rel="noopener">ESDG</a> L'Aquila - Poster présentant l'article <a href="https://doi.org/10.48550/arXiv.2507.05049" target="_blank" rel="noopener">arXiv:2507.05049</a><br><em>Biharmonic Steklov problems and spectral inequalities on differential forms.</em></li>
+          <li><strong>2026</strong>: <a href="https://sites.google.com/view/phd-seminar-2026/home" target="_blank" rel="noopener">PhD away days</a> à l'Université du Luxembourg<br><em>Steklov problems and spectral inequalities in planar domains.</em></li>
+          <li><strong>2025</strong>: <a href="https://www.sbai.uniroma1.it/node/8274" target="_blank" rel="noopener">Séminaire du département des sciences fondamentales et appliquées pour l'ingénierie</a> à l'Université La Sapienza, Rome<br><em>Biharmonic Steklov problems and spectral inequalities for differential forms.</em></li>
+          <li><strong>2025</strong>: <a href="https://www.mathematik.uni-konstanz.de/forschung/kolloquien-und-oberseminare/oberseminar-partielle-differentialgleichungen/oberseminar-partielle-differentialgleichungen-detail/termin/biharmonic-steklov-problems-and-spectral-inequalities-for-differential-forms/" target="_blank" rel="noopener">Séminaire avancé d'EDP</a> à l'Université de Constance, Allemagne<br><em>Biharmonic Steklov problems and spectral inequalities for differential forms.</em></li>
+          <li><strong>2025</strong>: <a href="https://iecl.univ-lorraine.fr/events/problemes-de-steklov-biharmoniques-et-inegalites-spectrales-sur-les-formes-differentielles/" target="_blank" rel="noopener">Séminaire de géométrie différentielle</a> de l'IECL, Nancy<br><em>Problèmes de Steklov biharmoniques et inégalités spectrales sur les formes différentielles.</em></li>
+          <li><strong>2024</strong>: <a href="https://iecl.univ-lorraine.fr/events/journee-des-doctorant-e-s/" target="_blank" rel="noopener">Journée des doctorants de l'IECL</a>, Nancy<br><em>The Biharmonic Steklov Operator.</em></li>
+          <li><strong>2024</strong>: <a href="https://ul.edu.lb/files/ann/20240913-ULDSST-ConAn-Program.pdf" target="_blank" rel="noopener">Forum doctoral de l'EDST</a> à l’Université Libanaise, Beyrouth<br><em>Problème de Steklov biharmonique sur les formes différentielles.</em></li>
+        </ul>
 
-    <h4>Auditeur</h4>
-    <ul>
-      <li><strong>2026</strong>: European School of Differential Geometry <a href='https://sites.google.com/view/esdg-aq26/home-page' target='_blank'>(ESDG)</a>, L'Aquila.</li>
-<li><strong>2026</strong>: Groupe de travail sur le spectre des surfaces hyperboliques, IECL Nancy.</li>
-      <li><strong>2025</strong>: Differential Geometry at L’Aquila 
-          <a href="https://sites.google.com/view/dgaq25" target="_blank">(DG@AQ25)</a></li>
-      <li><strong>2024</strong>: European Doctorate School of Differential Geometry 
-          <a href="https://imag.ugr.es/esdg/" target="_blank">(ESDG)</a>, Granada</li>
-      <li><strong>2024</strong>: Groupe de travail sur le spectre de l'opérateur de Steklov, IECL Nancy</li>
-      <li><strong>2023</strong>: Journée de géométrie, IECL Nancy</li>
-    </ul>
+        <h4>Auditeur</h4>
+        <ul>
+          <li><strong>2026</strong>: <a href="https://sites.google.com/view/esdg-aq26/home-page" target="_blank" rel="noopener">European School of Differential Geometry (ESDG)</a>, L'Aquila.</li>
+          <li><strong>2026</strong>: Groupe de travail sur le spectre des surfaces hyperboliques, IECL Nancy.</li>
+          <li><strong>2025</strong>: Differential Geometry at L’Aquila <a href="https://sites.google.com/view/dgaq25" target="_blank" rel="noopener">(DG@AQ25)</a></li>
+          <li><strong>2024</strong>: European Doctorate School of Differential Geometry <a href="https://imag.ugr.es/esdg/" target="_blank" rel="noopener">(ESDG)</a>, Granada</li>
+          <li><strong>2024</strong>: Groupe de travail sur le spectre de l'opérateur de Steklov, IECL Nancy</li>
+          <li><strong>2023</strong>: Journée de géométrie, IECL Nancy</li>
+        </ul>
 
-    <!-- Organisation et médiation scientifique -->
-    <h3>Organisation et médiation scientifique</h3>
-    <ul>
-      <li><strong>2024–Présent</strong>: Co-organisateur du <a href='https://iecl.univ-lorraine.fr/evenements-2/doctorants/' target='_blank'>séminaire des doctorants</a> à l’IECL.</li>
-      <li><strong>2026</strong>: Co-organisateur des <a href="https://sites.google.com/view/phd-seminar-2026/home"target="_blank">PhD away days</a> au Luxembourg avec les doctorants de l’Université du Luxembourg.</li>
-      <li><strong>2025</strong>: Co-organisateur des <a href="https://sites.google.com/view/phdawaydays2025/home-page"target="_blank">PhD away days</a> à Nancy avec les doctorants de l’Université du Luxembourg.</li>
-      <li><strong>2024–2025</strong>: Co-animateur du <a href="http://departement.maths-nancy.xyz/club/" target="_blank">club de mathématiques</a> au Lycée Jacques Callot, Vandœuvre-lès-Nancy.</li>
-      <li><strong>2024–2025</strong>: Co-animateur de l'atelier de mathématiques lors de la <a href='https://fst.univ-lorraine.fr/activites-et-evenements/fete-de-la-science/' target='_blank'>Fête de la Science</a> à la FST et à l’école élémentaire Jeanne d’Arc.</li>
-      <li><strong>2021–2023</strong>: Représentant étudiant en M1 et M2.</li>
-    </ul>
-  </div>
-</section>
+        <h3>Organisation et médiation scientifique</h3>
+        <ul>
+          <li><strong>2024–Présent</strong>: Co-organisateur du <a href="https://iecl.univ-lorraine.fr/evenements-2/doctorants/" target="_blank" rel="noopener">séminaire des doctorants</a> à l’IECL.</li>
+          <li><strong>2026</strong>: Co-organisateur des <a href="https://sites.google.com/view/phd-seminar-2026/home" target="_blank" rel="noopener">PhD away days</a> au Luxembourg avec les doctorants de l’Université du Luxembourg.</li>
+          <li><strong>2025</strong>: Co-organisateur des <a href="https://sites.google.com/view/phdawaydays2025/home-page" target="_blank" rel="noopener">PhD away days</a> à Nancy avec les doctorants de l’Université du Luxembourg.</li>
+          <li><strong>2024–2025</strong>: Co-animateur du <a href="http://departement.maths-nancy.xyz/club/" target="_blank" rel="noopener">club de mathématiques</a> au Lycée Jacques Callot, Vandœuvre-lès-Nancy.</li>
+          <li><strong>2024–2025</strong>: Co-animateur de l'atelier de mathématiques lors de la <a href="https://fst.univ-lorraine.fr/activites-et-evenements/fete-de-la-science/" target="_blank" rel="noopener">Fête de la Science</a> à la FST et à l’école élémentaire Jeanne d’Arc.</li>
+          <li><strong>2021–2023</strong>: Représentant étudiant en M1 et M2.</li>
+        </ul>
+      </div>
+    </section>
 
-<!-- NEWS -->
-<section id="news" class="card">
-  <h2 data-en="News & Updates" data-fr="Actualités et mises à jour">News & Updates</h2>
-  <p data-en="Here you can find the latest news, announcements, and academic updates." 
-     data-fr="Vous trouverez ici les dernières nouvelles, annonces et mises à jour académiques.">
-    Here you can find the latest news, announcements, and academic updates.
-  </p>
+    <!-- NEWS -->
+    <section id="news" class="card">
+      <h2 data-en="News & Updates" data-fr="Actualités et mises à jour">News & Updates</h2>
+      <p data-en="Here you can find the latest news, announcements, and academic updates." data-fr="Vous trouverez ici les dernières nouvelles, annonces et mises à jour académiques.">Here you can find the latest news, announcements, and academic updates.</p>
 
-  <ul>
-     <li>
-      <strong>May 2026:</strong> 
-      <span data-en="Presented at the <a href= 'https://sites.google.com/view/phd-seminar-2026/home' target='_blank'> Phd away days </a>, University of Luxembourg." 
-            data-fr="Présentation au <a href= 'https://sites.google.com/view/phd-seminar-2026/home' target='_blank'>Phd away days</a>, Université du Luxembourg.">
-       Presented at the Phd away days, University of Luxembourg.
-      </span>
-      </li>
-     <li>
-      <strong>May 2026:</strong> 
-      <span data-en=" <a href= 'https://sites.google.com/view/phd-seminar-2026/home' target='_blank'> PhD away days </a> in Luxembourg with the PhD students of the University of Luxembourg." 
-            data-fr=" <a href= 'https://sites.google.com/view/phd-seminar-2026/home' target='_blank'>  PhD away days </a> au Luxembourg avec les doctorants de l'Université du Luxembourg.">
-       PhD away days in Luxembourg with the PhD students of the University of Luxembourg
-      </span>
-      </li>
-     <li>
-      <strong>February 2026:</strong> 
-      <span data-en="Preprint submitted on <a href='https://arxiv.org/pdf/2602.09876' target='_blank'>ar𝛸iv</a>: ‘Geometric eigenvalue estimates of Kuttler-Sigillito type on differential forms’" 
-            data-fr="Prépublication soumise sur <a href='https://arxiv.org/pdf/2602.09876' target='_blank'>ar𝛸iv</a> : « Geometric eigenvalue estimates of Kuttler-Sigillito type on differential forms »">
-        Preprint submitted on arxiv: ‘Geometric eigenvalue estimates of Kuttler-Sigillito type on differential forms’
-      </span>
-    </li>
-    <li>
-      <strong>November 2025:</strong> 
-      <span data-en=" <a href= 'https://sites.google.com/view/phdawaydays2025/home-page' target='_blank'> PhD away days </a> with the PhD students of the University of Luxembourg." 
-            data-fr=" <a href= 'https://sites.google.com/view/phdawaydays2025/home-page' target='_blank'>  PhD away days </a> avec les doctorants de l'Université du Luxembourg à l'IECL.">
-       PhD away days in Nancy with the PhD students of the University of Luxembourg
-      </span>
-      </li>
-       <li>
-      <strong>November 2025:</strong> 
-      <span data-en=" <a href= 'https://iecl.univ-lorraine.fr/events/journee-des-doctorant-e-s-de-liecl/' target='_blank'> PhD days </a> at the IECL-Nancy." 
-            data-fr=" <a href= 'https://iecl.univ-lorraine.fr/events/journee-des-doctorant-e-s-de-liecl/' target='_blank'>  Journées des doctorants</a> de l'IECL-Nancy.">
-       PhD days at the IECL-Nancy.
-      </span>
-      </li>
-    <li>
-      <strong>October 2025:</strong> 
-      <span data-en="Presented at the <a href= 'https://www.sbai.uniroma1.it/node/8274' target='_blank'> seminar of the department of Basic and Applied Sciences for Engineering</a> , Sapienza University, Rome." 
-            data-fr="Présentation au <a href= 'https://www.sbai.uniroma1.it/node/8274' target='_blank'> séminaire du département des sciences fondamentales et appliquées pour l'ingénierie</a>, Université La Sapienza, Rome.">
-        Presented at the seminar of the department of Basic and Applied Sciences for Engineering , Sapienza University, Rome
-      </span>
-      </li>
-    <li>
-      <strong>September 2025:</strong> 
-      <span data-en="Started a 2-month research visit at Sapienza University, Rome, under <a href='https://doctorat.univ-lorraine.fr/fr/international/dream' target='_blank'>DrEAM</a> program." 
-            data-fr="Début d’un séjour de recherche à l’Université La Sapienza, Rome, dans le cadre du programme <a href='https://doctorat.univ-lorraine.fr/fr/international/dream' target='_blank'>DrEAM</a>.">
-        Started a 2-month research visit at Sapienza University, Rome, under DrEAM program.
-      </span>
-    </li>
-    <li>
-      <strong>July 2025:</strong> 
-      <span data-en="Presented at the <a href='https://www.mathematik.uni-konstanz.de/forschung/kolloquien-und-oberseminare/oberseminar-partielle-differentialgleichungen/oberseminar-partielle-differentialgleichungen-detail/termin/biharmonic-steklov-problems-and-spectral-inequalities-for-differential-forms/' target='_blank'> advanced PDE Seminar</a>, Department of Mathematics and Statistics, University of Konstanz, Germany." 
-            data-fr="Présentation au <a href='https://www.mathematik.uni-konstanz.de/forschung/kolloquien-und-oberseminare/oberseminar-partielle-differentialgleichungen/oberseminar-partielle-differentialgleichungen-detail/termin/biharmonic-steklov-problems-and-spectral-inequalities-for-differential-forms/' target='_blank'> séminaire avancé d'EDP</a>, département de mathématiques et de statistique, Université de Constance, Allemagne.">
-        Presented at the Advanced PDE Seminar, Department of Mathematics and Statistics University of Konstanz, Germany.
-      </span>
-      </li>
-    <li>
-      <strong>July 2025:</strong> 
-      <span data-en="Preprint submitted on <a href='https://arxiv.org/abs/2507.05049' target='_blank'>ar𝛸iv</a>: ‘Biharmonic Steklov problems with Neumann boundary conditions and spectral inequalities on differential forms’" 
-            data-fr="Prépublication soumise sur <a href='https://arxiv.org/abs/2507.05049' target='_blank'>ar𝛸iv</a> : « Biharmonic Steklov problems with Neumann boundary conditions and spectral inequalities on differential forms »">
-        Preprint submitted on arxiv: ‘Biharmonic Steklov problems with Neumann boundary conditions and spectral inequalities on differential forms’
-      </span>
-    </li>
-  </ul>
-</section>
+      <ul>
+        <li>
+          <strong>May 2026:</strong> 
+          <span data-en="Presented at the <a href='https://sites.google.com/view/phd-seminar-2026/home' target='_blank' rel='noopener'>PhD away days</a>, University of Luxembourg." data-fr="Présentation au <a href='https://sites.google.com/view/phd-seminar-2026/home' target='_blank' rel='noopener'>PhD away days</a>, Université du Luxembourg.">Presented at the PhD away days, University of Luxembourg.</span>
+        </li>
+        <li>
+          <strong>May 2026:</strong> 
+          <span data-en="Co-organized <a href='https://sites.google.com/view/phd-seminar-2026/home' target='_blank' rel='noopener'>PhD away days</a> in Luxembourg with the PhD students of the University of Luxembourg." data-fr="Co-organisateur des <a href='https://sites.google.com/view/phd-seminar-2026/home' target='_blank' rel='noopener'>PhD away days</a> au Luxembourg avec les doctorants de l'Université du Luxembourg.">PhD away days in Luxembourg with the PhD students of the University of Luxembourg</span>
+        </li>
+        <li>
+          <strong>February 2026:</strong> 
+          <span data-en="Preprint submitted on <a href='https://arxiv.org/abs/2602.09876' target='_blank' rel='noopener'>arXiv</a>: 'Geometric eigenvalue estimates of Kuttler-Sigillito type on differential forms'" data-fr="Prépublication soumise sur <a href='https://arxiv.org/abs/2602.09876' target='_blank' rel='noopener'>arXiv</a> : « Geometric eigenvalue estimates of Kuttler-Sigillito type on differential forms »">Preprint submitted on arXiv: 'Geometric eigenvalue estimates of Kuttler-Sigillito type on differential forms'</span>
+        </li>
+        <li>
+          <strong>November 2025:</strong> 
+          <span data-en="Attended <a href='https://sites.google.com/view/phdawaydays2025/home-page' target='_blank' rel='noopener'>PhD away days</a> with the PhD students of the University of Luxembourg." data-fr="Participé aux <a href='https://sites.google.com/view/phdawaydays2025/home-page' target='_blank' rel='noopener'>PhD away days</a> avec les doctorants de l'Université du Luxembourg à l'IECL.">PhD away days in Nancy with the PhD students of the University of Luxembourg</span>
+        </li>
+        <li>
+          <strong>November 2025:</strong> 
+          <span data-en="Attended <a href='https://iecl.univ-lorraine.fr/events/journee-des-doctorant-e-s-de-liecl/' target='_blank' rel='noopener'>PhD days</a> at the IECL-Nancy." data-fr="Participé aux <a href='https://iecl.univ-lorraine.fr/events/journee-des-doctorant-e-s-de-liecl/' target='_blank' rel='noopener'>Journées des doctorants</a> de l'IECL-Nancy.">PhD days at the IECL-Nancy.</span>
+        </li>
+        <li>
+          <strong>October 2025:</strong> 
+          <span data-en="Presented at the <a href='https://www.sbai.uniroma1.it/node/8274' target='_blank' rel='noopener'>seminar of the department of Basic and Applied Sciences for Engineering</a>, Sapienza University, Rome." data-fr="Présentation au <a href='https://www.sbai.uniroma1.it/node/8274' target='_blank' rel='noopener'>séminaire du département des sciences fondamentales et appliquées pour l'ingénierie</a>, Université La Sapienza, Rome.">Presented at the seminar of the department of Basic and Applied Sciences for Engineering, Sapienza University, Rome</span>
+        </li>
+        <li>
+          <strong>September 2025:</strong> 
+          <span data-en="Started a 2-month research visit at Sapienza University, Rome, under <a href='https://doctorat.univ-lorraine.fr/fr/international/dream' target='_blank' rel='noopener'>DrEAM</a> program." data-fr="Début d’un séjour de recherche à l’Université La Sapienza, Rome, dans le cadre du programme <a href='https://doctorat.univ-lorraine.fr/fr/international/dream' target='_blank' rel='noopener'>DrEAM</a>.">Started a 2-month research visit at Sapienza University, Rome, under DrEAM program.</span>
+        </li>
+        <li>
+          <strong>July 2025:</strong> 
+          <span data-en="Presented at the <a href='https://www.mathematik.uni-konstanz.de/forschung/kolloquien-und-oberseminare/oberseminar-partielle-differentialgleichungen/oberseminar-partielle-differentialgleichungen-detail/termin/biharmonic-steklov-problems-and-spectral-inequalities-for-differential-forms/' target='_blank' rel='noopener'>advanced PDE Seminar</a>, Department of Mathematics and Statistics, University of Konstanz, Germany." data-fr="Présentation au <a href='https://www.mathematik.uni-konstanz.de/forschung/kolloquien-und-oberseminare/oberseminar-partielle-differentialgleichungen/oberseminar-partielle-differentialgleichungen-detail/termin/biharmonic-steklov-problems-and-spectral-inequalities-for-differential-forms/' target='_blank' rel='noopener'>séminaire avancé d'EDP</a>, département de mathématiques et de statistique, Université de Constance, Allemagne.">Presented at the Advanced PDE Seminar, Department of Mathematics and Statistics, University of Konstanz, Germany.</span>
+        </li>
+        <li>
+          <strong>July 2025:</strong> 
+          <span data-en="Preprint submitted on <a href='https://arxiv.org/abs/2507.05049' target='_blank' rel='noopener'>arXiv</a>: 'Biharmonic Steklov problems with Neumann boundary conditions and spectral inequalities on differential forms'" data-fr="Prépublication soumise sur <a href='https://arxiv.org/abs/2507.05049' target='_blank' rel='noopener'>arXiv</a> : « Biharmonic Steklov problems with Neumann boundary conditions and spectral inequalities on differential forms »">Preprint submitted on arXiv: 'Biharmonic Steklov problems with Neumann boundary conditions and spectral inequalities on differential forms'</span>
+        </li>
+      </ul>
+    </section>
 
     <!-- CONTACT -->
     <section id="contact" class="card">
       <h2 data-en="Contact" data-fr="Contact">Contact</h2>
-      <p style="display:flex; align-items:flex-start; gap:6px;">
+      <p style="display:flex; align-items:center; gap:8px;">
         📧 
         <a href="#" class="contact-link" id="emailLink" title="Click to copy email">
           rodolphe.abou-assali@univ-lorraine.fr
         </a>
       </p>
-      <p style="display:flex; align-items:flex-start; gap:6px;">
+      <p style="display:flex; align-items:flex-start; gap:8px;">
         📍
         <a href="https://www.google.com/maps/search/?api=1&query=IECL+Site+de+Nancy,+Facult%C3%A9+des+sciences+et+Technologies,+Campus,+Boulevard+des+Aiguillettes,+54506+Vandœuvre-lès-Nancy+Office+226" 
-           target="_blank" 
+           target="_blank" rel="noopener"
            class="contact-link">
           IECL – Site de Nancy,<br>
           Faculté des sciences et Technologies,<br>
@@ -756,30 +599,26 @@ Durant mon parcours de thèse jusqu’à présent, j’ai suivi les formations d
 </div>
 
 <script>
-  document.querySelectorAll('.sidebar nav a').forEach(a => {
-  a.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = document.getElementById(a.getAttribute('data-target'));
-    target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
+// Language Management engine 
 function setLang(lang) {
-  document.querySelectorAll('[data-en]').forEach(el => el.innerHTML = el.getAttribute(`data-${lang}`));
-  document.title = document.querySelector('h1').getAttribute(`data-${lang}`);
-
-  // Show CV based on language
-  document.querySelectorAll('.cv-pdf-wrapper').forEach(div => {
-    div.style.display = (div.getAttribute('data-lang') === lang) ? 'block' : 'none';
+  // Update structural attributes text elements
+  document.querySelectorAll('[data-en][data-fr]').forEach(el => {
+    el.innerHTML = el.getAttribute(`data-${lang}`);
   });
+  
+  // Safe execution of main document head page title updates
+  document.title = document.getElementById('headerTitle').getAttribute(`data-${lang}`);
 
-  // Show Activities based on language
-  document.querySelectorAll('.activities-lang').forEach(div => {
+  // Toggling structured translation block wrapper blocks smoothly
+  document.querySelectorAll('[data-lang]').forEach(div => {
     div.style.display = (div.getAttribute('data-lang') === lang) ? 'block' : 'none';
   });
 }
+
+// Default run set language interface
 setLang('en');
 
+// Sidebar Interface Actions
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('overlay');
 
@@ -788,126 +627,89 @@ document.getElementById('hamburger').addEventListener('click', () => {
   overlay.classList.toggle('active');
 });
 
-overlay.addEventListener('click', () => {
+overlay.addEventListener('click', closeSidebar);
+function closeSidebar() {
   sidebar.classList.remove('open');
   overlay.classList.remove('active');
-});
-
-// Dark Mode Toggle
-const darkModeToggle = document.getElementById('darkModeToggle');
-if (document.body.classList.contains('dark')) {
-  darkModeToggle.textContent = '☀️';
-  darkModeToggle.title = 'Switch to Light Mode';
-} else {
-  darkModeToggle.textContent = '🌙';
-  darkModeToggle.title = 'Switch to Dark Mode';
 }
 
+// Dark Mode Controller Configuration logic
+const darkModeToggle = document.getElementById('darkModeToggle');
 darkModeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
-  if (document.body.classList.contains('dark')) {
-    darkModeToggle.textContent = '☀️';
-    darkModeToggle.title = 'Switch to Light Mode';
+  const isDark = document.body.classList.contains('dark');
+  darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+  darkModeToggle.title = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+  
+  if (isDark) {
     darkModeToggle.style.background = '#1e1e1e';
     darkModeToggle.style.color = '#e0e0e0';
     darkModeToggle.style.border = '1px solid #444';
   } else {
-    darkModeToggle.textContent = '🌙';
-    darkModeToggle.title = 'Switch to Dark Mode';
     darkModeToggle.style.background = '#f6f7fb';
     darkModeToggle.style.color = '#111';
     darkModeToggle.style.border = '1px solid #ccc';
   }
 });
 
-// Navigation
-document.querySelectorAll('.sidebar nav a').forEach(a => {
-  a.addEventListener('click', (e) => {
-    // Close sidebar on mobile after click
-if (window.innerWidth <= 768) {
-  document.getElementById('sidebar').classList.remove('open');
-}
+// Single Unified Navigation Engine
+document.querySelectorAll('.sidebar nav a, #headerTitle').forEach(trigger => {
+  trigger.addEventListener('click', (e) => {
     e.preventDefault();
     
-    // Remove active class from all cards and sidebar links
-    document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+    let targetId = trigger.getAttribute('data-target') || 'home';
+    const targetSection = document.getElementById(targetId);
+    
+    if (window.innerWidth <= 768) {
+      closeSidebar();
+    }
+
+    // Toggle styling references
     document.querySelectorAll('.sidebar nav a').forEach(nav => nav.classList.remove('active'));
+    const activeLink = document.querySelector(`.sidebar nav a[data-target="${targetId}"]`);
+    if (activeLink) activeLink.classList.add('active');
 
-    // Add active class to clicked link and its section
-    a.classList.add('active');
-    const target = document.getElementById(a.getAttribute('data-target'));
-    target.classList.add('active');
-
-    // Scroll accounting for sticky header
+    // Safe view animation position offset target computations
     const headerOffset = document.querySelector('header').offsetHeight;
-    const elementPosition = target.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 10; // extra 10px spacing
+    const elementPosition = targetSection.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 14;
 
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth"
     });
-       if (window.innerWidth <= 768) {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('active');
-    }
   });
 });
 
-document.getElementById('headerTitle').addEventListener('click', () => {
-  // Remove active class from all cards and sidebar links
-  document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
-  document.querySelectorAll('.sidebar nav a').forEach(nav => nav.classList.remove('active'));
-
-  // Add active class to Home section and link
-  const homeSection = document.getElementById('home');
-  homeSection.classList.add('active');
-  document.querySelector('.sidebar nav a[data-target="home"]').classList.add('active');
-
-  // Scroll to Home section accounting for sticky header
-  const headerOffset = document.querySelector('header').offsetHeight;
-  const elementPosition = homeSection.getBoundingClientRect().top;
-  const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 10; // extra spacing
-
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: "smooth"
+// Email Interaction Actions
+document.getElementById('emailLink').addEventListener('click', (e) => {
+  e.preventDefault();
+  navigator.clipboard.writeText('rodolphe.abou-assali@univ-lorraine.fr').then(() => {
+    alert('Email copied to clipboard!');
   });
 });
 
-
-document.getElementById('emailLink').addEventListener('click', () => {
-  navigator.clipboard.writeText('rodolphe.abou-assali@univ-lorraine.fr');
-  alert('Email copied to clipboard!');
-});
-
- 
-</script>
-<script>
+// Sidebar Intersection Tracker Logic
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("main section");
   const navLinks = document.querySelectorAll(".sidebar nav a");
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
+      // Fires if section takes up major viewport screen center
       if (entry.isIntersecting) {
         const id = entry.target.id;
-
         navLinks.forEach(link => {
           link.classList.toggle("active", link.dataset.target === id);
         });
       }
     });
   }, {
-    threshold: 0.6   // when 60% of a section is on screen
+    rootMargin: "-20% 0px -60% 0px" // Dynamic focus tracking bounding client setup
   });
 
   sections.forEach(section => observer.observe(section));
 });
-  function closeSidebar() {
-  sidebar.classList.remove('open');
-  overlay.classList.remove('active');
-}
 </script>
 </body>
 </html>
